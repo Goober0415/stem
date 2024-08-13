@@ -1,8 +1,8 @@
 /* 
  * Project analogWrite
  * Description: Use analogWrite to change the brightness of an LED
- * Author: Your Name
- * Date: 
+ * Author: Jamie Gavina
+ * Date: 8/13/2024
  */
 
 #include "Particle.h"
@@ -21,17 +21,26 @@ void setup() {
   delay(1000);
 
   //analog write here
-
+  analogWrite(LED, 16);
+  
 }
 
 // loop() runs over and over again, as quickly as it can execute.
 void loop() {
 
-  for(int i = 0; i < 255; i++)
+  for(int i = 0; i <= 255; i++)
   {
 
-    //start your triangle wave code here
+    analogWrite(LED, i + 1);
+    delay(10);
+    
 
   }
+  for(int i = 0; i >= 0; i--)
+  {
+    analogWrite(LED, i - 1);
+    delay(10);
+  }
+  
 
 }
